@@ -2,7 +2,15 @@ package fr.dauphine.eu;
 
 import org.antlr.v4.runtime.tree.TerminalNode;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class RuleVisitor extends farmBaseVisitor<String> {
+    private final Set<String> attributes = new HashSet<>();
+
+    public Set<String> getAttributes() {
+        return attributes;
+    }
 
     @Override
     public String visitFrl(farmParser.FrlContext ctx) {
@@ -72,14 +80,16 @@ public class RuleVisitor extends farmBaseVisitor<String> {
         }
 
         // Convert the assignment to use the setter method instead of the getter
+        String setterMethod = "context.set" + capitalize(ctx.variable().getText());
+        attributes.add(ctx.variable().getText()); // Track attributes dynamically
+
         if (operator.equals("=")) {
-            return "context.set" + capitalize(ctx.variable().getText()) + "(" + expr + ")";
+            return setterMethod + "(" + expr + ")";
         } else {
-            // Handle other assignment operators (+=, -=, etc.) if needed
-            return "context.set" + capitalize(ctx.variable().getText()) + "(context.get" + capitalize(ctx.variable().getText()) + "()" + operator.charAt(0) + expr + ")";
+            // Handle other assignment operators (+=, -=, etc.)
+            return setterMethod + "(context.get" + capitalize(ctx.variable().getText()) + "()" + operator.charAt(0) + expr + ")";
         }
     }
-
 
     @Override
     public String visitExpression(farmParser.ExpressionContext ctx) {
@@ -95,7 +105,7 @@ public class RuleVisitor extends farmBaseVisitor<String> {
 
             return left + " " + operator + " " + right;
         } else if (ctx.getChildCount() == 2) {
-            // Gestion du négation
+            // Handle negation
             String operator = ctx.getChild(0).getText();
             String expr = visit(ctx.getChild(1));
             if (expr == null) {
@@ -128,7 +138,9 @@ public class RuleVisitor extends farmBaseVisitor<String> {
     @Override
     public String visitVariable(farmParser.VariableContext ctx) {
         if (ctx.SIMPLENAME() != null) {
-            return "context.get" + capitalize(ctx.SIMPLENAME().getText()) + "()";
+            String varName = ctx.SIMPLENAME().getText();
+            attributes.add(varName); // Track attributes dynamically
+            return "context.get" + capitalize(varName) + "()";
         } else if (ctx.variable() != null && ctx.memberVariable() != null) {
             String parentVar = visit(ctx.variable());
             String memberVar = ctx.memberVariable().SIMPLENAME().getText();
@@ -179,13 +191,10 @@ public class RuleVisitor extends farmBaseVisitor<String> {
         return sb.toString();
     }
 
-    // Autres méthodes de visite selon les besoins...
-
-    // Méthode utilitaire pour capitaliser la première lettre
     private String capitalize(String str) {
         if (str == null || str.isEmpty()) {
             return str;
         }
-        return str.substring(0,1).toUpperCase() + str.substring(1);
+        return str.substring(0, 1).toUpperCase() + str.substring(1);
     }
 }

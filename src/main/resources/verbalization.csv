@@ -1,3 +1,3 @@
-attribut,classe
-amount,fr.dauphine.eu.context.Montant
-montantGPC,fr.dauphine.eu.context.MontantGPC
+attribut,class d'attribut
+amount,fr.dauphine.eu.context.Context
+montantGPC,fr.dauphine.eu.context.Context
