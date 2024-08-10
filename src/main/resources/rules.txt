@@ -1,0 +1,6 @@
+rule "Montant Rule" {
+    when
+        amount > 2000
+    then
+        amount = montantGPC + 10;
+}
