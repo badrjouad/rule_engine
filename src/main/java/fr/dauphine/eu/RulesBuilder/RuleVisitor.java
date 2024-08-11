@@ -1,11 +1,12 @@
-package fr.dauphine.eu;
+package fr.dauphine.eu.RulesBuilder;
 
-import org.antlr.v4.runtime.tree.TerminalNode;
+import fr.dauphine.eu.generated_sources.FarmBaseVisitor;
+import fr.dauphine.eu.generated_sources.FarmParser;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class RuleVisitor extends farmBaseVisitor<String> {
+public class RuleVisitor extends FarmBaseVisitor<String> {
     private final Set<String> attributes = new HashSet<>();
 
     public Set<String> getAttributes() {
@@ -13,16 +14,16 @@ public class RuleVisitor extends farmBaseVisitor<String> {
     }
 
     @Override
-    public String visitFrl(farmParser.FrlContext ctx) {
+    public String visitFrl(FarmParser.FrlContext ctx) {
         StringBuilder sb = new StringBuilder();
-        for (farmParser.RuleEntryContext ruleCtx : ctx.ruleEntry()) {
+        for (FarmParser.RuleEntryContext ruleCtx : ctx.ruleEntry()) {
             sb.append(visit(ruleCtx)).append("\n");
         }
         return sb.toString();
     }
 
     @Override
-    public String visitRuleEntry(farmParser.RuleEntryContext ctx) {
+    public String visitRuleEntry(FarmParser.RuleEntryContext ctx) {
         String when = visit(ctx.whenScope());
         String then = visit(ctx.thenScope());
 
@@ -35,19 +36,19 @@ public class RuleVisitor extends farmBaseVisitor<String> {
     }
 
     @Override
-    public String visitWhenScope(farmParser.WhenScopeContext ctx) {
+    public String visitWhenScope(FarmParser.WhenScopeContext ctx) {
         return visit(ctx.expression());
     }
 
     @Override
-    public String visitThenScope(farmParser.ThenScopeContext ctx) {
+    public String visitThenScope(FarmParser.ThenScopeContext ctx) {
         return visit(ctx.thenExpressionList());
     }
 
     @Override
-    public String visitThenExpressionList(farmParser.ThenExpressionListContext ctx) {
+    public String visitThenExpressionList(FarmParser.ThenExpressionListContext ctx) {
         StringBuilder sb = new StringBuilder();
-        for (farmParser.ThenExpressionContext exprCtx : ctx.thenExpression()) {
+        for (FarmParser.ThenExpressionContext exprCtx : ctx.thenExpression()) {
             String expr = visit(exprCtx);
             if (expr != null && !expr.isEmpty()) {
                 sb.append(expr).append(";\n");
@@ -57,7 +58,7 @@ public class RuleVisitor extends farmBaseVisitor<String> {
     }
 
     @Override
-    public String visitThenExpression(farmParser.ThenExpressionContext ctx) {
+    public String visitThenExpression(FarmParser.ThenExpressionContext ctx) {
         if (ctx.assignment() != null) {
             return visit(ctx.assignment());
         } else if (ctx.expressionAtom() != null) {
@@ -69,7 +70,7 @@ public class RuleVisitor extends farmBaseVisitor<String> {
     }
 
     @Override
-    public String visitAssignment(farmParser.AssignmentContext ctx) {
+    public String visitAssignment(FarmParser.AssignmentContext ctx) {
         String varName = visit(ctx.variable());
         String expr = visit(ctx.expression());
         String operator = ctx.getChild(1).getText(); // ASSIGN | PLUS_ASSIGN | etc.
@@ -92,7 +93,7 @@ public class RuleVisitor extends farmBaseVisitor<String> {
     }
 
     @Override
-    public String visitExpression(farmParser.ExpressionContext ctx) {
+    public String visitExpression(FarmParser.ExpressionContext ctx) {
         if (ctx.getChildCount() == 3) {
             String left = visit(ctx.getChild(0));
             String operator = ctx.getChild(1).getText();
@@ -122,7 +123,7 @@ public class RuleVisitor extends farmBaseVisitor<String> {
     }
 
     @Override
-    public String visitExpressionAtom(farmParser.ExpressionAtomContext ctx) {
+    public String visitExpressionAtom(FarmParser.ExpressionAtomContext ctx) {
         if (ctx.constant() != null) {
             return visit(ctx.constant());
         } else if (ctx.variable() != null) {
@@ -136,7 +137,7 @@ public class RuleVisitor extends farmBaseVisitor<String> {
     }
 
     @Override
-    public String visitVariable(farmParser.VariableContext ctx) {
+    public String visitVariable(FarmParser.VariableContext ctx) {
         if (ctx.SIMPLENAME() != null) {
             String varName = ctx.SIMPLENAME().getText();
             attributes.add(varName); // Track attributes dynamically
@@ -152,7 +153,7 @@ public class RuleVisitor extends farmBaseVisitor<String> {
     }
 
     @Override
-    public String visitConstant(farmParser.ConstantContext ctx) {
+    public String visitConstant(FarmParser.ConstantContext ctx) {
         if (ctx.integerLiteral() != null) {
             return ctx.integerLiteral().getText();
         } else if (ctx.floatLiteral() != null) {
@@ -170,7 +171,7 @@ public class RuleVisitor extends farmBaseVisitor<String> {
     }
 
     @Override
-    public String visitFunctionCall(farmParser.FunctionCallContext ctx) {
+    public String visitFunctionCall(FarmParser.FunctionCallContext ctx) {
         String functionName = ctx.SIMPLENAME().getText();
         String arguments = "";
         if (ctx.argumentList() != null) {
@@ -180,7 +181,7 @@ public class RuleVisitor extends farmBaseVisitor<String> {
     }
 
     @Override
-    public String visitArgumentList(farmParser.ArgumentListContext ctx) {
+    public String visitArgumentList(FarmParser.ArgumentListContext ctx) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < ctx.expression().size(); i++) {
             sb.append(visit(ctx.expression(i)));

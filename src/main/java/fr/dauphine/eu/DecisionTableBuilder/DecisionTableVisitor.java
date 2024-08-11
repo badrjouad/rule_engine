@@ -1,4 +1,4 @@
-package fr.dauphine.eu;
+package fr.dauphine.eu.DecisionTableBuilder;
 
 import java.util.List;
 import java.util.Map;

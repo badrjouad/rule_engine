@@ -1,0 +1,6 @@
+rule "Montant Rule" {
+    when
+        montantGPC == 0
+    then
+        montantGPC = 1;
+}

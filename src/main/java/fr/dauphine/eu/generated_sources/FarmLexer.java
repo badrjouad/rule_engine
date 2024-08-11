@@ -1,4 +1,4 @@
-package fr.dauphine.eu;// Generated from src/main/resources/antlr4/farm.g4 by ANTLR 4.9.2
+package fr.dauphine.eu.generated_sources;// Generated from src/main/resources/antlr4/Farm.g4 by ANTLR 4.9.2
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -9,7 +9,7 @@ import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.misc.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class farmLexer extends Lexer {
+public class FarmLexer extends Lexer {
 	static { RuntimeMetaData.checkVersion("4.9.2", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -105,13 +105,13 @@ public class farmLexer extends Lexer {
 	}
 
 
-	public farmLexer(CharStream input) {
+	public FarmLexer(CharStream input) {
 		super(input);
 		_interp = new LexerATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
 	@Override
-	public String getGrammarFileName() { return "farm.g4"; }
+	public String getGrammarFileName() { return "Farm.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }

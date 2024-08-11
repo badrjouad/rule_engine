@@ -1,4 +1,4 @@
-package fr.dauphine.eu;
+package fr.dauphine.eu.DecisionTableBuilder;
 
 import com.opencsv.CSVReader;
 

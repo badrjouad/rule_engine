@@ -1,4 +1,4 @@
-grammar farm;
+grammar Farm;
 
 // PARSER HERE
 frl

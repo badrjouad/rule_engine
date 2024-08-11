@@ -1,5 +1,7 @@
-package fr.dauphine.eu;
+package fr.dauphine.eu.RulesBuilder;
 
+import fr.dauphine.eu.generated_sources.FarmLexer;
+import fr.dauphine.eu.generated_sources.FarmParser;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -19,9 +21,9 @@ public class RuleCodeGenerator {
             // Read the rules from the file
             String ruleText = new String(Files.readAllBytes(Paths.get(rulesFilePath)));
             CharStream input = CharStreams.fromString(ruleText);
-            farmLexer lexer = new farmLexer(input);
+            FarmLexer lexer = new FarmLexer(input);
             CommonTokenStream tokens = new CommonTokenStream(lexer);
-            farmParser parser = new farmParser(tokens);
+            FarmParser parser = new FarmParser(tokens);
             ParseTree tree = parser.frl();
 
             RuleVisitor visitor = new RuleVisitor();

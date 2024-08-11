@@ -1,4 +1,4 @@
-package fr.dauphine.eu;
+package fr.dauphine.eu.DecisionTableBuilder;
 
 import javax.tools.JavaCompiler;
 import javax.tools.ToolProvider;
@@ -45,10 +45,10 @@ public class DecisionTableCodeGeneration {
 
         String generatedCode = "package fr.dauphine.eu;\n" +
                 "import fr.dauphine.eu.context.Context;\n" +
-                "public class GeneratedRule {\n" +
+                "public class GeneratedDecisionTableRule {\n" +
                 "    public static void main(String[] args) {\n" +
                 contextCode.toString() +
-                "        GeneratedRule ruleExecutor = new GeneratedRule();\n" +
+                "        GeneratedDecisionTableRule ruleExecutor = new GeneratedDecisionTableRule();\n" +
                 "        // Execute conditions and actions\n";
 
         for (int i = 0; i < decisionTable.size(); i++) {
@@ -107,7 +107,7 @@ public class DecisionTableCodeGeneration {
         }
 
         // Execute the compiled class
-        ProcessBuilder pb = new ProcessBuilder("java", "-cp", ".", "fr.dauphine.eu.GeneratedRule");
+        ProcessBuilder pb = new ProcessBuilder("java", "-cp", ".", "fr.dauphine.eu.GeneratedDecisionTableRule");
         pb.directory(new java.io.File("C:\\Users\\jouad\\Downloads\\generate_rule\\src\\main\\java"));
         Process process = pb.start();
         process.waitFor();

@@ -1,4 +1,4 @@
-package fr.dauphine.eu;// Generated from src/main/resources/antlr4/farm.g4 by ANTLR 4.9.2
+package fr.dauphine.eu.generated_sources;// Generated from src/main/resources/antlr4/Farm.g4 by ANTLR 4.9.2
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -6,7 +6,7 @@ import org.antlr.v4.runtime.tree.*;
 import java.util.List;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class farmParser extends Parser {
+public class FarmParser extends Parser {
 	static { RuntimeMetaData.checkVersion("4.9.2", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -101,7 +101,7 @@ public class farmParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "farm.g4"; }
+	public String getGrammarFileName() { return "Farm.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -112,13 +112,13 @@ public class farmParser extends Parser {
 	@Override
 	public ATN getATN() { return _ATN; }
 
-	public farmParser(TokenStream input) {
+	public FarmParser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
 	public static class FrlContext extends ParserRuleContext {
-		public TerminalNode EOF() { return getToken(farmParser.EOF, 0); }
+		public TerminalNode EOF() { return getToken(FarmParser.EOF, 0); }
 		public List<RuleEntryContext> ruleEntry() {
 			return getRuleContexts(RuleEntryContext.class);
 		}
@@ -131,15 +131,15 @@ public class farmParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_frl; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterFrl(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterFrl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitFrl(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitFrl(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitFrl(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitFrl(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -181,18 +181,18 @@ public class farmParser extends Parser {
 	}
 
 	public static class RuleEntryContext extends ParserRuleContext {
-		public TerminalNode RULE() { return getToken(farmParser.RULE, 0); }
+		public TerminalNode RULE() { return getToken(FarmParser.RULE, 0); }
 		public RuleNameContext ruleName() {
 			return getRuleContext(RuleNameContext.class,0);
 		}
-		public TerminalNode LR_BRACE() { return getToken(farmParser.LR_BRACE, 0); }
+		public TerminalNode LR_BRACE() { return getToken(FarmParser.LR_BRACE, 0); }
 		public WhenScopeContext whenScope() {
 			return getRuleContext(WhenScopeContext.class,0);
 		}
 		public ThenScopeContext thenScope() {
 			return getRuleContext(ThenScopeContext.class,0);
 		}
-		public TerminalNode RR_BRACE() { return getToken(farmParser.RR_BRACE, 0); }
+		public TerminalNode RR_BRACE() { return getToken(FarmParser.RR_BRACE, 0); }
 		public RuleDescriptionContext ruleDescription() {
 			return getRuleContext(RuleDescriptionContext.class,0);
 		}
@@ -205,15 +205,15 @@ public class farmParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_ruleEntry; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterRuleEntry(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterRuleEntry(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitRuleEntry(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitRuleEntry(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitRuleEntry(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitRuleEntry(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -271,7 +271,7 @@ public class farmParser extends Parser {
 	}
 
 	public static class SalienceContext extends ParserRuleContext {
-		public TerminalNode SALIENCE() { return getToken(farmParser.SALIENCE, 0); }
+		public TerminalNode SALIENCE() { return getToken(FarmParser.SALIENCE, 0); }
 		public IntegerLiteralContext integerLiteral() {
 			return getRuleContext(IntegerLiteralContext.class,0);
 		}
@@ -281,15 +281,15 @@ public class farmParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_salience; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterSalience(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterSalience(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitSalience(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitSalience(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitSalience(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitSalience(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -318,7 +318,7 @@ public class farmParser extends Parser {
 	}
 
 	public static class RuleNameContext extends ParserRuleContext {
-		public TerminalNode SIMPLENAME() { return getToken(farmParser.SIMPLENAME, 0); }
+		public TerminalNode SIMPLENAME() { return getToken(FarmParser.SIMPLENAME, 0); }
 		public StringLiteralContext stringLiteral() {
 			return getRuleContext(StringLiteralContext.class,0);
 		}
@@ -328,15 +328,15 @@ public class farmParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_ruleName; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterRuleName(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterRuleName(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitRuleName(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitRuleName(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitRuleName(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitRuleName(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -379,23 +379,23 @@ public class farmParser extends Parser {
 	}
 
 	public static class RuleDescriptionContext extends ParserRuleContext {
-		public TerminalNode DQUOTA_STRING() { return getToken(farmParser.DQUOTA_STRING, 0); }
-		public TerminalNode SQUOTA_STRING() { return getToken(farmParser.SQUOTA_STRING, 0); }
+		public TerminalNode DQUOTA_STRING() { return getToken(FarmParser.DQUOTA_STRING, 0); }
+		public TerminalNode SQUOTA_STRING() { return getToken(FarmParser.SQUOTA_STRING, 0); }
 		public RuleDescriptionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_ruleDescription; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterRuleDescription(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterRuleDescription(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitRuleDescription(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitRuleDescription(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitRuleDescription(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitRuleDescription(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -431,7 +431,7 @@ public class farmParser extends Parser {
 	}
 
 	public static class WhenScopeContext extends ParserRuleContext {
-		public TerminalNode WHEN() { return getToken(farmParser.WHEN, 0); }
+		public TerminalNode WHEN() { return getToken(FarmParser.WHEN, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
@@ -441,15 +441,15 @@ public class farmParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_whenScope; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterWhenScope(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterWhenScope(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitWhenScope(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitWhenScope(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitWhenScope(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitWhenScope(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -478,7 +478,7 @@ public class farmParser extends Parser {
 	}
 
 	public static class ThenScopeContext extends ParserRuleContext {
-		public TerminalNode THEN() { return getToken(farmParser.THEN, 0); }
+		public TerminalNode THEN() { return getToken(FarmParser.THEN, 0); }
 		public ThenExpressionListContext thenExpressionList() {
 			return getRuleContext(ThenExpressionListContext.class,0);
 		}
@@ -488,15 +488,15 @@ public class farmParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_thenScope; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterThenScope(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterThenScope(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitThenScope(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitThenScope(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitThenScope(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitThenScope(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -531,9 +531,9 @@ public class farmParser extends Parser {
 		public ThenExpressionContext thenExpression(int i) {
 			return getRuleContext(ThenExpressionContext.class,i);
 		}
-		public List<TerminalNode> SEMICOLON() { return getTokens(farmParser.SEMICOLON); }
+		public List<TerminalNode> SEMICOLON() { return getTokens(FarmParser.SEMICOLON); }
 		public TerminalNode SEMICOLON(int i) {
-			return getToken(farmParser.SEMICOLON, i);
+			return getToken(FarmParser.SEMICOLON, i);
 		}
 		public ThenExpressionListContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -541,15 +541,15 @@ public class farmParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_thenExpressionList; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterThenExpressionList(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterThenExpressionList(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitThenExpressionList(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitThenExpressionList(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitThenExpressionList(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitThenExpressionList(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -603,15 +603,15 @@ public class farmParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_thenExpression; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterThenExpression(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterThenExpression(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitThenExpression(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitThenExpression(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitThenExpression(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitThenExpression(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -657,26 +657,26 @@ public class farmParser extends Parser {
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
-		public TerminalNode ASSIGN() { return getToken(farmParser.ASSIGN, 0); }
-		public TerminalNode PLUS_ASIGN() { return getToken(farmParser.PLUS_ASIGN, 0); }
-		public TerminalNode MINUS_ASIGN() { return getToken(farmParser.MINUS_ASIGN, 0); }
-		public TerminalNode DIV_ASIGN() { return getToken(farmParser.DIV_ASIGN, 0); }
-		public TerminalNode MUL_ASIGN() { return getToken(farmParser.MUL_ASIGN, 0); }
+		public TerminalNode ASSIGN() { return getToken(FarmParser.ASSIGN, 0); }
+		public TerminalNode PLUS_ASIGN() { return getToken(FarmParser.PLUS_ASIGN, 0); }
+		public TerminalNode MINUS_ASIGN() { return getToken(FarmParser.MINUS_ASIGN, 0); }
+		public TerminalNode DIV_ASIGN() { return getToken(FarmParser.DIV_ASIGN, 0); }
+		public TerminalNode MUL_ASIGN() { return getToken(FarmParser.MUL_ASIGN, 0); }
 		public AssignmentContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_assignment; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterAssignment(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterAssignment(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitAssignment(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitAssignment(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitAssignment(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitAssignment(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -716,15 +716,15 @@ public class farmParser extends Parser {
 	}
 
 	public static class ExpressionContext extends ParserRuleContext {
-		public TerminalNode LR_BRACKET() { return getToken(farmParser.LR_BRACKET, 0); }
+		public TerminalNode LR_BRACKET() { return getToken(FarmParser.LR_BRACKET, 0); }
 		public List<ExpressionContext> expression() {
 			return getRuleContexts(ExpressionContext.class);
 		}
 		public ExpressionContext expression(int i) {
 			return getRuleContext(ExpressionContext.class,i);
 		}
-		public TerminalNode RR_BRACKET() { return getToken(farmParser.RR_BRACKET, 0); }
-		public TerminalNode NEGATION() { return getToken(farmParser.NEGATION, 0); }
+		public TerminalNode RR_BRACKET() { return getToken(FarmParser.RR_BRACKET, 0); }
+		public TerminalNode NEGATION() { return getToken(FarmParser.NEGATION, 0); }
 		public ExpressionAtomContext expressionAtom() {
 			return getRuleContext(ExpressionAtomContext.class,0);
 		}
@@ -749,15 +749,15 @@ public class farmParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_expression; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterExpression(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterExpression(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitExpression(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitExpression(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitExpression(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitExpression(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -901,24 +901,24 @@ public class farmParser extends Parser {
 	}
 
 	public static class MulDivOperatorsContext extends ParserRuleContext {
-		public TerminalNode MUL() { return getToken(farmParser.MUL, 0); }
-		public TerminalNode DIV() { return getToken(farmParser.DIV, 0); }
-		public TerminalNode MOD() { return getToken(farmParser.MOD, 0); }
+		public TerminalNode MUL() { return getToken(FarmParser.MUL, 0); }
+		public TerminalNode DIV() { return getToken(FarmParser.DIV, 0); }
+		public TerminalNode MOD() { return getToken(FarmParser.MOD, 0); }
 		public MulDivOperatorsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_mulDivOperators; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterMulDivOperators(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterMulDivOperators(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitMulDivOperators(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitMulDivOperators(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitMulDivOperators(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitMulDivOperators(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -954,25 +954,25 @@ public class farmParser extends Parser {
 	}
 
 	public static class AddMinusOperatorsContext extends ParserRuleContext {
-		public TerminalNode PLUS() { return getToken(farmParser.PLUS, 0); }
-		public TerminalNode MINUS() { return getToken(farmParser.MINUS, 0); }
-		public TerminalNode BITAND() { return getToken(farmParser.BITAND, 0); }
-		public TerminalNode BITOR() { return getToken(farmParser.BITOR, 0); }
+		public TerminalNode PLUS() { return getToken(FarmParser.PLUS, 0); }
+		public TerminalNode MINUS() { return getToken(FarmParser.MINUS, 0); }
+		public TerminalNode BITAND() { return getToken(FarmParser.BITAND, 0); }
+		public TerminalNode BITOR() { return getToken(FarmParser.BITOR, 0); }
 		public AddMinusOperatorsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_addMinusOperators; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterAddMinusOperators(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterAddMinusOperators(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitAddMinusOperators(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitAddMinusOperators(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitAddMinusOperators(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitAddMinusOperators(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1008,27 +1008,27 @@ public class farmParser extends Parser {
 	}
 
 	public static class ComparisonOperatorContext extends ParserRuleContext {
-		public TerminalNode GT() { return getToken(farmParser.GT, 0); }
-		public TerminalNode LT() { return getToken(farmParser.LT, 0); }
-		public TerminalNode GTE() { return getToken(farmParser.GTE, 0); }
-		public TerminalNode LTE() { return getToken(farmParser.LTE, 0); }
-		public TerminalNode EQUALS() { return getToken(farmParser.EQUALS, 0); }
-		public TerminalNode NOTEQUALS() { return getToken(farmParser.NOTEQUALS, 0); }
+		public TerminalNode GT() { return getToken(FarmParser.GT, 0); }
+		public TerminalNode LT() { return getToken(FarmParser.LT, 0); }
+		public TerminalNode GTE() { return getToken(FarmParser.GTE, 0); }
+		public TerminalNode LTE() { return getToken(FarmParser.LTE, 0); }
+		public TerminalNode EQUALS() { return getToken(FarmParser.EQUALS, 0); }
+		public TerminalNode NOTEQUALS() { return getToken(FarmParser.NOTEQUALS, 0); }
 		public ComparisonOperatorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_comparisonOperator; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterComparisonOperator(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterComparisonOperator(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitComparisonOperator(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitComparisonOperator(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitComparisonOperator(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitComparisonOperator(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1064,22 +1064,22 @@ public class farmParser extends Parser {
 	}
 
 	public static class AndLogicOperatorContext extends ParserRuleContext {
-		public TerminalNode AND() { return getToken(farmParser.AND, 0); }
+		public TerminalNode AND() { return getToken(FarmParser.AND, 0); }
 		public AndLogicOperatorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_andLogicOperator; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterAndLogicOperator(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterAndLogicOperator(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitAndLogicOperator(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitAndLogicOperator(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitAndLogicOperator(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitAndLogicOperator(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1106,22 +1106,22 @@ public class farmParser extends Parser {
 	}
 
 	public static class OrLogicOperatorContext extends ParserRuleContext {
-		public TerminalNode OR() { return getToken(farmParser.OR, 0); }
+		public TerminalNode OR() { return getToken(FarmParser.OR, 0); }
 		public OrLogicOperatorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_orLogicOperator; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterOrLogicOperator(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterOrLogicOperator(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitOrLogicOperator(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitOrLogicOperator(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitOrLogicOperator(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitOrLogicOperator(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1157,7 +1157,7 @@ public class farmParser extends Parser {
 		public FunctionCallContext functionCall() {
 			return getRuleContext(FunctionCallContext.class,0);
 		}
-		public TerminalNode NEGATION() { return getToken(farmParser.NEGATION, 0); }
+		public TerminalNode NEGATION() { return getToken(FarmParser.NEGATION, 0); }
 		public ExpressionAtomContext expressionAtom() {
 			return getRuleContext(ExpressionAtomContext.class,0);
 		}
@@ -1176,15 +1176,15 @@ public class farmParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_expressionAtom; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterExpressionAtom(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterExpressionAtom(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitExpressionAtom(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitExpressionAtom(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitExpressionAtom(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitExpressionAtom(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1309,22 +1309,22 @@ public class farmParser extends Parser {
 		public BooleanLiteralContext booleanLiteral() {
 			return getRuleContext(BooleanLiteralContext.class,0);
 		}
-		public TerminalNode NIL_LITERAL() { return getToken(farmParser.NIL_LITERAL, 0); }
+		public TerminalNode NIL_LITERAL() { return getToken(FarmParser.NIL_LITERAL, 0); }
 		public ConstantContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_constant; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterConstant(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterConstant(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitConstant(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitConstant(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitConstant(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitConstant(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1385,7 +1385,7 @@ public class farmParser extends Parser {
 	}
 
 	public static class VariableContext extends ParserRuleContext {
-		public TerminalNode SIMPLENAME() { return getToken(farmParser.SIMPLENAME, 0); }
+		public TerminalNode SIMPLENAME() { return getToken(FarmParser.SIMPLENAME, 0); }
 		public VariableContext variable() {
 			return getRuleContext(VariableContext.class,0);
 		}
@@ -1401,15 +1401,15 @@ public class farmParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_variable; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterVariable(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterVariable(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitVariable(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitVariable(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitVariable(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitVariable(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1486,26 +1486,26 @@ public class farmParser extends Parser {
 	}
 
 	public static class ArrayMapSelectorContext extends ParserRuleContext {
-		public TerminalNode LS_BRACKET() { return getToken(farmParser.LS_BRACKET, 0); }
+		public TerminalNode LS_BRACKET() { return getToken(FarmParser.LS_BRACKET, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
-		public TerminalNode RS_BRACKET() { return getToken(farmParser.RS_BRACKET, 0); }
+		public TerminalNode RS_BRACKET() { return getToken(FarmParser.RS_BRACKET, 0); }
 		public ArrayMapSelectorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_arrayMapSelector; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterArrayMapSelector(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterArrayMapSelector(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitArrayMapSelector(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitArrayMapSelector(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitArrayMapSelector(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitArrayMapSelector(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1536,23 +1536,23 @@ public class farmParser extends Parser {
 	}
 
 	public static class MemberVariableContext extends ParserRuleContext {
-		public TerminalNode DOT() { return getToken(farmParser.DOT, 0); }
-		public TerminalNode SIMPLENAME() { return getToken(farmParser.SIMPLENAME, 0); }
+		public TerminalNode DOT() { return getToken(FarmParser.DOT, 0); }
+		public TerminalNode SIMPLENAME() { return getToken(FarmParser.SIMPLENAME, 0); }
 		public MemberVariableContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_memberVariable; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterMemberVariable(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterMemberVariable(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitMemberVariable(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitMemberVariable(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitMemberVariable(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitMemberVariable(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1581,9 +1581,9 @@ public class farmParser extends Parser {
 	}
 
 	public static class FunctionCallContext extends ParserRuleContext {
-		public TerminalNode SIMPLENAME() { return getToken(farmParser.SIMPLENAME, 0); }
-		public TerminalNode LR_BRACKET() { return getToken(farmParser.LR_BRACKET, 0); }
-		public TerminalNode RR_BRACKET() { return getToken(farmParser.RR_BRACKET, 0); }
+		public TerminalNode SIMPLENAME() { return getToken(FarmParser.SIMPLENAME, 0); }
+		public TerminalNode LR_BRACKET() { return getToken(FarmParser.LR_BRACKET, 0); }
+		public TerminalNode RR_BRACKET() { return getToken(FarmParser.RR_BRACKET, 0); }
 		public ArgumentListContext argumentList() {
 			return getRuleContext(ArgumentListContext.class,0);
 		}
@@ -1593,15 +1593,15 @@ public class farmParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_functionCall; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterFunctionCall(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterFunctionCall(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitFunctionCall(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitFunctionCall(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitFunctionCall(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitFunctionCall(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1643,7 +1643,7 @@ public class farmParser extends Parser {
 	}
 
 	public static class MethodCallContext extends ParserRuleContext {
-		public TerminalNode DOT() { return getToken(farmParser.DOT, 0); }
+		public TerminalNode DOT() { return getToken(FarmParser.DOT, 0); }
 		public FunctionCallContext functionCall() {
 			return getRuleContext(FunctionCallContext.class,0);
 		}
@@ -1653,15 +1653,15 @@ public class farmParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_methodCall; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterMethodCall(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterMethodCall(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitMethodCall(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitMethodCall(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitMethodCall(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitMethodCall(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1702,15 +1702,15 @@ public class farmParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_argumentList; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterArgumentList(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterArgumentList(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitArgumentList(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitArgumentList(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitArgumentList(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitArgumentList(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1766,15 +1766,15 @@ public class farmParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_floatLiteral; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterFloatLiteral(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterFloatLiteral(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitFloatLiteral(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitFloatLiteral(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitFloatLiteral(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitFloatLiteral(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1814,23 +1814,23 @@ public class farmParser extends Parser {
 	}
 
 	public static class DecimalFloatLiteralContext extends ParserRuleContext {
-		public TerminalNode DECIMAL_FLOAT_LIT() { return getToken(farmParser.DECIMAL_FLOAT_LIT, 0); }
-		public TerminalNode MINUS() { return getToken(farmParser.MINUS, 0); }
+		public TerminalNode DECIMAL_FLOAT_LIT() { return getToken(FarmParser.DECIMAL_FLOAT_LIT, 0); }
+		public TerminalNode MINUS() { return getToken(FarmParser.MINUS, 0); }
 		public DecimalFloatLiteralContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_decimalFloatLiteral; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterDecimalFloatLiteral(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterDecimalFloatLiteral(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitDecimalFloatLiteral(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitDecimalFloatLiteral(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitDecimalFloatLiteral(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitDecimalFloatLiteral(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1868,23 +1868,23 @@ public class farmParser extends Parser {
 	}
 
 	public static class HexadecimalFloatLiteralContext extends ParserRuleContext {
-		public TerminalNode HEX_FLOAT_LIT() { return getToken(farmParser.HEX_FLOAT_LIT, 0); }
-		public TerminalNode MINUS() { return getToken(farmParser.MINUS, 0); }
+		public TerminalNode HEX_FLOAT_LIT() { return getToken(FarmParser.HEX_FLOAT_LIT, 0); }
+		public TerminalNode MINUS() { return getToken(FarmParser.MINUS, 0); }
 		public HexadecimalFloatLiteralContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_hexadecimalFloatLiteral; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterHexadecimalFloatLiteral(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterHexadecimalFloatLiteral(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitHexadecimalFloatLiteral(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitHexadecimalFloatLiteral(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitHexadecimalFloatLiteral(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitHexadecimalFloatLiteral(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1937,15 +1937,15 @@ public class farmParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_integerLiteral; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterIntegerLiteral(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterIntegerLiteral(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitIntegerLiteral(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitIntegerLiteral(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitIntegerLiteral(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitIntegerLiteral(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1992,23 +1992,23 @@ public class farmParser extends Parser {
 	}
 
 	public static class DecimalLiteralContext extends ParserRuleContext {
-		public TerminalNode DEC_LIT() { return getToken(farmParser.DEC_LIT, 0); }
-		public TerminalNode MINUS() { return getToken(farmParser.MINUS, 0); }
+		public TerminalNode DEC_LIT() { return getToken(FarmParser.DEC_LIT, 0); }
+		public TerminalNode MINUS() { return getToken(FarmParser.MINUS, 0); }
 		public DecimalLiteralContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_decimalLiteral; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterDecimalLiteral(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterDecimalLiteral(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitDecimalLiteral(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitDecimalLiteral(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitDecimalLiteral(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitDecimalLiteral(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2046,23 +2046,23 @@ public class farmParser extends Parser {
 	}
 
 	public static class HexadecimalLiteralContext extends ParserRuleContext {
-		public TerminalNode HEX_LIT() { return getToken(farmParser.HEX_LIT, 0); }
-		public TerminalNode MINUS() { return getToken(farmParser.MINUS, 0); }
+		public TerminalNode HEX_LIT() { return getToken(FarmParser.HEX_LIT, 0); }
+		public TerminalNode MINUS() { return getToken(FarmParser.MINUS, 0); }
 		public HexadecimalLiteralContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_hexadecimalLiteral; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterHexadecimalLiteral(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterHexadecimalLiteral(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitHexadecimalLiteral(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitHexadecimalLiteral(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitHexadecimalLiteral(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitHexadecimalLiteral(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2100,23 +2100,23 @@ public class farmParser extends Parser {
 	}
 
 	public static class OctalLiteralContext extends ParserRuleContext {
-		public TerminalNode OCT_LIT() { return getToken(farmParser.OCT_LIT, 0); }
-		public TerminalNode MINUS() { return getToken(farmParser.MINUS, 0); }
+		public TerminalNode OCT_LIT() { return getToken(FarmParser.OCT_LIT, 0); }
+		public TerminalNode MINUS() { return getToken(FarmParser.MINUS, 0); }
 		public OctalLiteralContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_octalLiteral; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterOctalLiteral(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterOctalLiteral(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitOctalLiteral(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitOctalLiteral(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitOctalLiteral(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitOctalLiteral(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2154,23 +2154,23 @@ public class farmParser extends Parser {
 	}
 
 	public static class StringLiteralContext extends ParserRuleContext {
-		public TerminalNode DQUOTA_STRING() { return getToken(farmParser.DQUOTA_STRING, 0); }
-		public TerminalNode SQUOTA_STRING() { return getToken(farmParser.SQUOTA_STRING, 0); }
+		public TerminalNode DQUOTA_STRING() { return getToken(FarmParser.DQUOTA_STRING, 0); }
+		public TerminalNode SQUOTA_STRING() { return getToken(FarmParser.SQUOTA_STRING, 0); }
 		public StringLiteralContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_stringLiteral; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterStringLiteral(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterStringLiteral(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitStringLiteral(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitStringLiteral(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitStringLiteral(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitStringLiteral(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2206,23 +2206,23 @@ public class farmParser extends Parser {
 	}
 
 	public static class BooleanLiteralContext extends ParserRuleContext {
-		public TerminalNode TRUE() { return getToken(farmParser.TRUE, 0); }
-		public TerminalNode FALSE() { return getToken(farmParser.FALSE, 0); }
+		public TerminalNode TRUE() { return getToken(FarmParser.TRUE, 0); }
+		public TerminalNode FALSE() { return getToken(FarmParser.FALSE, 0); }
 		public BooleanLiteralContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_booleanLiteral; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).enterBooleanLiteral(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).enterBooleanLiteral(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof farmListener ) ((farmListener)listener).exitBooleanLiteral(this);
+			if ( listener instanceof FarmListener ) ((FarmListener)listener).exitBooleanLiteral(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof farmVisitor ) return ((farmVisitor<? extends T>)visitor).visitBooleanLiteral(this);
+			if ( visitor instanceof FarmVisitor ) return ((FarmVisitor<? extends T>)visitor).visitBooleanLiteral(this);
 			else return visitor.visitChildren(this);
 		}
 	}
