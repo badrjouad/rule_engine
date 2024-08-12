@@ -12,7 +12,7 @@ import java.util.Set;
 public class DecisionTableCodeGeneration {
 
     public void generateCode(String decisionTablePath, String outputPath) throws Exception {
-        // Parse the decision table from the CSV file
+
         List<Map<String, String>> decisionTable = DecisionTableParser.parseDecisionTable(decisionTablePath);
 
         StringBuilder conditions = new StringBuilder();

@@ -6,6 +6,7 @@ import fr.dauphine.eu.generated_sources.FarmParser;
 import java.util.HashSet;
 import java.util.Set;
 
+
 public class RuleVisitor extends FarmBaseVisitor<String> {
     private final Set<String> attributes = new HashSet<>();
 
@@ -87,7 +88,7 @@ public class RuleVisitor extends FarmBaseVisitor<String> {
         if (operator.equals("=")) {
             return setterMethod + "(" + expr + ")";
         } else {
-            // Handle other assignment operators (+=, -=, etc.)
+
             return setterMethod + "(context.get" + capitalize(ctx.variable().getText()) + "()" + operator.charAt(0) + expr + ")";
         }
     }
