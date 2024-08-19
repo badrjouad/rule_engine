@@ -1,12 +1,12 @@
 grammar Farm;
 
-// PARSER HERE
+
 frl
     : ruleEntry* EOF
     ;
 
 ruleEntry
-    : RULE ruleName ruleDescription? salience? LR_BRACE whenScope thenScope RR_BRACE
+    : RULE ruleName ruleDescription? salience? (whenScope thenScope | LR_BRACE whenScope thenScope RR_BRACE)
     ;
 
 salience
@@ -62,16 +62,29 @@ addMinusOperators
     ;
 
 comparisonOperator
-    : GT | LT | GTE | LTE | EQUALS | NOTEQUALS
+    : EQUALS_OPERATOR
+    | GREATER_THAN_OPERATOR
+    | LESS_THAN_OPERATOR
+    | GREATER_THAN_EQUALS_OPERATOR
+    | LESS_THAN_EQUALS_OPERATOR
+    | NOT_EQUALS_OPERATOR
     ;
 
+EQUALS_OPERATOR            : 'equals';
+GREATER_THAN_OPERATOR      : 'greater_than';
+LESS_THAN_OPERATOR         : 'less_than';
+GREATER_THAN_EQUALS_OPERATOR: 'greater_than_equals';
+LESS_THAN_EQUALS_OPERATOR  : 'less_than_equals';
+NOT_EQUALS_OPERATOR        : 'not_equals';
+
 andLogicOperator
-    : AND
+    : 'and'
     ;
 
 orLogicOperator
-    : OR
+    : 'or'
     ;
+
 
 expressionAtom
     : constant

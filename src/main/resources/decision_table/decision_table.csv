@@ -1,3 +1,4 @@
 Condition1,Condition2,Condition3,Action1,Action2
-amount > 2000,montantGPC > 50,amount < 5000,amount = montantGPC + 30,montantGPC = amount - 10
-amount <= 2000,montantGPC <= 50,amount >= 1000,amount = montantGPC + 10,montantGPC = amount + 5
+primeAssurance > 1000,montantGPC > 50,primeAssurance < 5000,primeAssurance = montantGPC + 100,montantGPC = primeAssurance - 50
+primeAssurance <= 1000,montantGPC <= 50,primeAssurance >= 500,primeAssurance = montantGPC + 50,montantGPC = primeAssurance + 20
+nombreAccidents > 3,ageConducteur < 25,montantGPC < 100,primeAssurance = primeAssurance + 200,montantGPC = montantGPC - 10

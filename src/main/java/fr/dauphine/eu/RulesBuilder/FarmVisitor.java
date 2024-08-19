@@ -1,4 +1,4 @@
-package fr.dauphine.eu.generated_sources;// Generated from src/main/resources/antlr4/Farm.g4 by ANTLR 4.9.2
+package fr.dauphine.eu.RulesBuilder;// Generated from src/main/resources/antlr4/Farm.g4 by ANTLR 4.9.2
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**

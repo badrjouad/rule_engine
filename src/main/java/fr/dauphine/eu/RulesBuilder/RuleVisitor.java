@@ -1,7 +1,5 @@
 package fr.dauphine.eu.RulesBuilder;
 
-import fr.dauphine.eu.generated_sources.FarmBaseVisitor;
-import fr.dauphine.eu.generated_sources.FarmParser;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -13,7 +11,6 @@ public class RuleVisitor extends FarmBaseVisitor<String> {
     public Set<String> getAttributes() {
         return attributes;
     }
-
     @Override
     public String visitFrl(FarmParser.FrlContext ctx) {
         StringBuilder sb = new StringBuilder();
@@ -35,6 +32,7 @@ public class RuleVisitor extends FarmBaseVisitor<String> {
 
         return "if (" + when + ") {\n" + then + "}\n";
     }
+
 
     @Override
     public String visitWhenScope(FarmParser.WhenScopeContext ctx) {
@@ -74,16 +72,15 @@ public class RuleVisitor extends FarmBaseVisitor<String> {
     public String visitAssignment(FarmParser.AssignmentContext ctx) {
         String varName = visit(ctx.variable());
         String expr = visit(ctx.expression());
-        String operator = ctx.getChild(1).getText(); // ASSIGN | PLUS_ASSIGN | etc.
+        String operator = ctx.getChild(1).getText();
 
         if (varName == null || expr == null) {
             System.err.println("Erreur dans l'affectation: variable ou expression est null.");
             return "";
         }
 
-        // Convert the assignment to use the setter method instead of the getter
         String setterMethod = "context.set" + capitalize(ctx.variable().getText());
-        attributes.add(ctx.variable().getText()); // Track attributes dynamically
+        attributes.add(ctx.variable().getText());
 
         if (operator.equals("=")) {
             return setterMethod + "(" + expr + ")";
@@ -105,9 +102,47 @@ public class RuleVisitor extends FarmBaseVisitor<String> {
                 return "";
             }
 
+            // Map word-based operators to their symbolic counterparts
+            switch (operator) {
+                case "equals":
+                    operator = "==";
+                    break;
+                case "greater_than":
+                    operator = ">";
+                    break;
+                case "less_than":
+                    operator = "<";
+                    break;
+                case "greater_than_or_equals":
+                    operator = ">=";
+                    break;
+                case "less_than_or_equals":
+                    operator = "<=";
+                    break;
+                case "not_equals":
+                    operator = "!=";
+                    break;
+                case "and":
+                    operator = "&&";
+                    break;
+                case "or":
+                    operator = "||";
+                    break;
+                // Handle arithmetic operators
+                case "+":
+                case "-":
+                case "*":
+                case "/":
+                case "%":
+                    // Do nothing, the operator is already correct
+                    break;
+                default:
+                    System.err.println("Unknown operator: " + operator);
+                    return "";
+            }
+
             return left + " " + operator + " " + right;
         } else if (ctx.getChildCount() == 2) {
-            // Handle negation
             String operator = ctx.getChild(0).getText();
             String expr = visit(ctx.getChild(1));
             if (expr == null) {
@@ -122,6 +157,7 @@ public class RuleVisitor extends FarmBaseVisitor<String> {
             return "";
         }
     }
+
 
     @Override
     public String visitExpressionAtom(FarmParser.ExpressionAtomContext ctx) {

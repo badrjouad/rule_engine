@@ -18,29 +18,36 @@ public class DecisionTableCodeGeneration {
         StringBuilder conditions = new StringBuilder();
         StringBuilder actions = new StringBuilder();
         Set<String> attributes = new HashSet<>();
+        Set<String> doubleAttributes = new HashSet<>();  // Set to track which attributes are double
 
         // Extract conditions, actions, and attributes
         for (int i = 0; i < decisionTable.size(); i++) {
             Map<String, String> row = decisionTable.get(i);
 
             conditions.append("private boolean condition").append(i + 1).append("(Context context) {\n")
-                    .append("    return ").append(replaceAttributesWithGetters(row.get("Condition1"))).append(" && ")
-                    .append(replaceAttributesWithGetters(row.get("Condition2"))).append(" && ")
-                    .append(replaceAttributesWithGetters(row.get("Condition3"))).append(";\n}\n");
+                    .append("    return ").append(replaceAttributesWithGetters(row.get("Condition1"), doubleAttributes)).append(" && ")
+                    .append(replaceAttributesWithGetters(row.get("Condition2"), doubleAttributes)).append(" && ")
+                    .append(replaceAttributesWithGetters(row.get("Condition3"), doubleAttributes)).append(";\n}\n");
 
             actions.append("private void action").append(i + 1).append("(Context context) {\n")
-                    .append("    ").append(replaceAttributesWithSetters(row.get("Action1"))).append(";\n")
-                    .append("    ").append(replaceAttributesWithSetters(row.get("Action2"))).append(";\n}\n");
+                    .append("    ").append(replaceAttributesWithSetters(row.get("Action1"), doubleAttributes)).append(";\n")
+                    .append("    ").append(replaceAttributesWithSetters(row.get("Action2"), doubleAttributes)).append(";\n}\n");
 
-            attributes.add(row.get("Action1").split(" ")[0]);
-            attributes.add(row.get("Action2").split(" ")[0]);
+            // Identify attributes and their types
+            identifyAttributeType(row.get("Action1"), attributes, doubleAttributes);
+            identifyAttributeType(row.get("Action2"), attributes, doubleAttributes);
         }
 
         StringBuilder contextCode = new StringBuilder("Context context = new Context();\n");
         contextCode.append("java.util.Scanner scanner = new java.util.Scanner(System.in);\n");
         for (String attribute : attributes) {
-            contextCode.append("System.out.print(\"Entrez la valeur de '").append(attribute).append("': \");\n")
-                    .append("context.set").append(capitalize(attribute)).append("(scanner.nextInt());\n");
+            if (doubleAttributes.contains(attribute)) {
+                contextCode.append("System.out.print(\"Entrez la valeur de '").append(attribute).append("': \");\n")
+                        .append("context.set").append(capitalize(attribute)).append("(scanner.nextDouble());\n");
+            } else {
+                contextCode.append("System.out.print(\"Entrez la valeur de '").append(attribute).append("': \");\n")
+                        .append("context.set").append(capitalize(attribute)).append("(scanner.nextInt());\n");
+            }
         }
 
         String generatedCode = "package fr.dauphine.eu;\n" +
@@ -72,19 +79,46 @@ public class DecisionTableCodeGeneration {
         compileAndRun(outputPath);
     }
 
-    private String replaceAttributesWithGetters(String condition) {
+    private void identifyAttributeType(String action, Set<String> attributes, Set<String> doubleAttributes) {
+        String[] parts = action.split("=");
+        if (parts.length == 2) {
+            String attribute = parts[0].trim();
+            String value = parts[1].trim();
+
+            attributes.add(attribute);
+
+            // Check if the value is a double
+            if (value.matches(".*\\d+\\.\\d+.*")) {
+                doubleAttributes.add(attribute);
+            }
+        }
+    }
+
+    private String replaceAttributesWithGetters(String condition, Set<String> doubleAttributes) {
         String[] parts = condition.split(" ");
         if (parts.length == 3) {
-            return "context.get" + capitalize(parts[0]) + "() " + parts[1] + " " + parts[2];
+            String attribute = parts[0];
+            String getterCall = "context.get" + capitalize(attribute) + "() " + parts[1] + " " + parts[2];
+
+            if (doubleAttributes.contains(attribute)) {
+                getterCall = "(double) " + getterCall;
+            }
+            return getterCall;
         }
         return condition;
     }
 
-    private String replaceAttributesWithSetters(String action) {
+    private String replaceAttributesWithSetters(String action, Set<String> doubleAttributes) {
         String[] parts = action.split("=");
         if (parts.length == 2) {
             String attribute = parts[0].trim();
-            return "context.set" + capitalize(attribute) + "(" + replaceAttributesWithGetters(parts[1].trim()) + ")";
+            String valueExpression = parts[1].trim();
+
+            if (doubleAttributes.contains(attribute)) {
+                return "context.set" + capitalize(attribute) + "(int) " + replaceAttributesWithGetters(valueExpression, doubleAttributes) + ")";
+            } else {
+                return "context.set" + capitalize(attribute) + "(" + replaceAttributesWithGetters(valueExpression, doubleAttributes) + ")";
+            }
         }
         return action;
     }

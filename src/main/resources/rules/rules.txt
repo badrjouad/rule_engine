@@ -1,6 +1,35 @@
-rule "Montant Rule" {
-    when
-        montantGPC == 0
-    then
-        montantGPC = 1;
-}
+rule "Vérification Montant GPC à 100"
+when montantGPC equals 100 then montantGPC = 1;
+
+rule "Montant GPC inférieur à 50"
+when montantGPC less_than 50 then montantGPC = 2;
+
+rule "Ajustement Montant GPC pour une petite prime"
+when montantGPC greater_than 0 and montantGPC less_than 100 then montantGPC = 10; amount = montantGPC * 2;
+
+rule "Augmentation Prime Assurance"
+when primeAssurance greater_than 500 then primeAssurance = primeAssurance * 1.05;
+
+rule "Réduction Franchise pour Bon Conducteur"
+when franchise equals 300 then franchise = franchise - 50;
+
+rule "Réduction Prime pour Gros Montant GPC"
+when primeAssurance greater_than 1000 and montantGPC less_than 200 then primeAssurance = primeAssurance * 0.9; montantGPC = montantGPC + 50;
+
+rule "Réduction de Prime pour Historique Propre"
+when nombreAccidents equals 0 and anneesContrat greater_than 5 then primeAssurance = primeAssurance * 0.85;
+
+rule "Augmentation Franchise pour Risques Élevés"
+when nombreAccidents greater_than 3 or sinistres equals true then franchise = franchise + 100;
+
+rule "Prime Réduite pour Conducteurs Agés"
+when ageConducteur greater_than 60 and nombreAccidents equals 0 then primeAssurance = primeAssurance * 0.8;
+
+rule "Ajustement Montant pour Clients Fidèles"
+when anneesContrat greater_than 10 then montantGPC = montantGPC + 20;
+
+rule "Prime Minimale pour Nouveaux Clients"
+when anneesContrat equals 0 then primeAssurance = 300;
+
+rule "Réduction Prime pour Véhicule Hybride"
+when typeVehicule equals "hybride" then primeAssurance = primeAssurance * 0.9;
